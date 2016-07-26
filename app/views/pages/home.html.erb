@@ -1,6 +1,14 @@
 <div class="jumbotron text-center">
   <h1>Welcome to my app!</h1>
-  <%= link_to 'log in', '#', class: 'btn btn-primary btn-lg' %>
-  <%= link_to 'Sing up', '#', class: "btn btn-primary btn-lg" %>
+  <% if user_signed_in? %>
+
+  <%else%>
+
+    <%= link_to 'log in', new_user_session_path,
+     class: 'btn btn-primary btn-lg' %>
+    <%= link_to 'Sing up', new_user_registration_path,
+     class: "btn btn-primary btn-lg" %>
+  <%end%>
+
 </div>
 
